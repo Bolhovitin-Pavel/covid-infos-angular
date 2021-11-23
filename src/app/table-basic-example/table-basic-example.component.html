@@ -1,0 +1,40 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef>Страна</th>
+        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cases">
+        <th mat-header-cell *matHeaderCellDef>Количество случаев</th>
+        <td mat-cell *matCellDef="let element"> {{element.cases}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deaths">
+        <th mat-header-cell *matHeaderCellDef>Количество смертей</th>
+        <td mat-cell *matCellDef="let element"> {{element.deaths}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="allCases">
+        <th mat-header-cell *matHeaderCellDef>Количество случаев всего</th>
+        <td mat-cell *matCellDef="let element"> {{element.allCases}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="allDeaths">
+        <th mat-header-cell *matHeaderCellDef>Количество смертей всего</th>
+        <td mat-cell *matCellDef="let element"> {{element.allDeaths}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="casesPer1000">
+        <th mat-header-cell *matHeaderCellDef>Количество случаев на 1000 житилей</th>
+        <td mat-cell *matCellDef="let element"> {{element.casesPer1000}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deathsPer1000">
+        <th mat-header-cell *matHeaderCellDef>Количество смертей на 1000 житилей</th>
+        <td mat-cell *matCellDef="let element"> {{element.deathsPer1000}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
